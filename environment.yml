@@ -1,0 +1,11 @@
+name: data
+channels:
+  - defaults
+dependencies:
+  - jupyter
+  - matplotlib
+  - numpy
+  - pandas
+  - scikit-learn
+  - scipy
+prefix: /home/joelm/miniconda3/envs/data
