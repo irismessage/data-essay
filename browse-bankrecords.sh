@@ -1,4 +1,4 @@
 #!/bin/bash
 set -eux
 
-sqlitebrowser 'BankRecords.db'
+exec sqlitebrowser 'BankRecords.db'
