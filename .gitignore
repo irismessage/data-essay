@@ -2,6 +2,7 @@
 *.bundle
 *.csv
 *.db
+*.db-journal
 *.pdf
 *.zip
 
