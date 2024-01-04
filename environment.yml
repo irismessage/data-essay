@@ -1,11 +1,16 @@
 name: data
 channels:
+  - conda-forge
   - defaults
 dependencies:
+  - debugpy
   - jupyter
   - matplotlib
   - numpy
   - pandas
+  - python=3.11
   - scikit-learn
   - scipy
+  - seaborn
+  - sqlalchemy
 prefix: /home/joelm/miniconda3/envs/data
