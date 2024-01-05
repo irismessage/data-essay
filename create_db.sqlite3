@@ -1,0 +1,85 @@
+CREATE TABLE Account (
+    accountID INTEGER PRIMARY KEY,
+    statementFrequency TEXT NOT NULL,  -- frequency
+    creationDate TEXT NOT NULL,
+    CHECK (statementFrequency IN ('Monthly', 'Weekly', 'Per transaction'))
+) STRICT;
+CREATE TABLE Loan (
+    loanID INTEGER PRIMARY KEY,
+    dispID INTEGER NOT NULL,
+    loanDate TEXT NOT NULL,
+    loanAmount REAL NOT NULL,
+    loanDuration INTEGER NOT NULL,
+    loanPayments INTEGER NOT NULL,
+    loanStatus TEXT NOT NULL,
+    FOREIGN KEY (dispID) REFERENCES Disposition(dispID),
+    CHECK (loanStatus in ('A', 'B', 'C', 'D'))
+) STRICT;
+CREATE TABLE StandingOrder (
+    orderID INTEGER PRIMARY KEY,
+    dispID INTEGER NOT NULL,
+    bankTo TEXT NOT NULL,
+    accountTo INTEGER NOT NULL,
+    orderAmount REAL NOT NULL,
+    paymentType TEXT,
+    FOREIGN KEY (dispID) REFERENCES Disposition(dispID)
+) STRICT;
+CREATE TABLE BankTransaction (  -- Transaction is a reserved word
+    transID INTEGER PRIMARY KEY,
+    dispID INTEGER NOT NULL,
+    transDate TEXT NOT NULL,
+    transType TEXT NOT NULL,
+    operation TEXT,
+    transAmount REAL NOT NULL,
+    balance REAL NOT NULL,
+    transDetail TEXT,
+    partnerBank TEXT,
+    partnerAccount INTEGER,
+    FOREIGN KEY (dispID) REFERENCES Disposition(dispID),
+    CHECK (transType in ('Credit', 'Withdrawal', 'Withdrawal in cash')),
+    CHECK (operation in ('Credit in cash', 'Collection from another bank', 'Credit card withdrawal', 'Remittance to another bank', 'Withdrawal in cash')),
+    CHECK (transAmount >= 0)
+) STRICT;
+-- Line up sooo nice. awesome
+CREATE TABLE Client (
+    clientID INTEGER PRIMARY KEY,
+    cityID INTEGER NOT NULL,  -- a1
+    birthDate TEXT NOT NULL,  -- birth_number
+    gender INTEGER NOT NULL,  -- birth_number
+    FOREIGN KEY (cityID) REFERENCES City(cityID)
+) STRICT;
+CREATE TABLE Disposition (
+    dispID INTEGER PRIMARY KEY,
+    accountID INTEGER NOT NULL,
+    clientID INTEGER NOT NULL,
+    dispType TEXT NOT NULL,
+    FOREIGN KEY (accountID) REFERENCES Account(accountID),
+    FOREIGN KEY (clientID) REFERENCES Client(clientID),
+    CHECK (dispType in ('OWNER', 'DISPONENT'))
+) STRICT;
+CREATE TABLE CreditCard (
+    cardID INTEGER PRIMARY KEY,
+    dispID INTEGER NOT NULL,
+    cardType TEXT NOT NULL,
+    cardIssued TEXT NOT NULL,
+    FOREIGN KEY (dispID) REFERENCES Disposition(dispID),
+    CHECK (cardType IN ('gold', 'classic', 'junior'))
+) STRICT;
+CREATE TABLE City (
+    cityID INTEGER PRIMARY KEY,  -- a1
+    cityName TEXT,
+    region TEXT,
+    inhabitants INTEGER,
+    muns0 INTEGER,
+    muns500 INTEGER,
+    muns2000 INTEGER,
+    muns10000 INTEGER,
+    noAreas INTEGER,
+    ratioUrban REAL,
+    avgSalary REAL,
+    unemployment1995 REAL,
+    unemployment1996 REAL,
+    entrepeneurs INTEGER,
+    crimes1995 INTEGER,
+    crimes1996 INTEGER  -- a16
+) STRICT;
