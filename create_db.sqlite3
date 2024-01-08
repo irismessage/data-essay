@@ -27,6 +27,9 @@ CREATE TABLE StandingOrder (
 CREATE TABLE BankTransaction (  -- Transaction is a reserved word
     transID INTEGER PRIMARY KEY,
     dispID INTEGER NOT NULL,
+    loanID INTEGER,
+    orderID INTEGER,
+    cardID INTEGER,
     transDate TEXT NOT NULL,
     transType TEXT NOT NULL,
     operation TEXT,
@@ -36,6 +39,9 @@ CREATE TABLE BankTransaction (  -- Transaction is a reserved word
     partnerBank TEXT,
     partnerAccount INTEGER,
     FOREIGN KEY (dispID) REFERENCES Disposition(dispID),
+    FOREIGN KEY (loanID) REFERENCES Loan(loanID),
+    FOREIGN KEY (orderID) REFERENCES StandingOrder(orderID),
+    FOREIGN KEY (cardID) REFERENCES CreditCard(cardID),
     CHECK (transType in ('Credit', 'Withdrawal', 'Withdrawal in cash')),
     CHECK (operation in ('Credit in cash', 'Collection from another bank', 'Credit card withdrawal', 'Remittance to another bank', 'Withdrawal in cash')),
     CHECK (transAmount >= 0)
