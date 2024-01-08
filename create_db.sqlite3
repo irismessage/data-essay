@@ -1,9 +1,12 @@
+-- database has been tested with STRICT and check constrints,
+-- so they can be disabled now for speed and compatability
+PRAGMA ignore_check_constraints = true;
 CREATE TABLE Account (
     accountID INTEGER PRIMARY KEY,
     statementFrequency TEXT NOT NULL,  -- frequency
     creationDate TEXT NOT NULL,
     CHECK (statementFrequency IN ('Monthly', 'Weekly', 'Per transaction'))
-) STRICT;
+);
 CREATE TABLE Loan (
     loanID INTEGER PRIMARY KEY,
     dispID INTEGER NOT NULL,
@@ -14,7 +17,7 @@ CREATE TABLE Loan (
     loanStatus TEXT NOT NULL,
     FOREIGN KEY (dispID) REFERENCES Disposition(dispID),
     CHECK (loanStatus in ('A', 'B', 'C', 'D'))
-) STRICT;
+);
 CREATE TABLE StandingOrder (
     orderID INTEGER PRIMARY KEY,
     dispID INTEGER NOT NULL,
@@ -23,7 +26,7 @@ CREATE TABLE StandingOrder (
     orderAmount REAL NOT NULL,
     paymentType TEXT,
     FOREIGN KEY (dispID) REFERENCES Disposition(dispID)
-) STRICT;
+);
 CREATE TABLE BankTransaction (  -- Transaction is a reserved word
     transID INTEGER PRIMARY KEY,
     dispID INTEGER NOT NULL,
@@ -45,7 +48,7 @@ CREATE TABLE BankTransaction (  -- Transaction is a reserved word
     CHECK (transType in ('Credit', 'Withdrawal', 'Withdrawal in cash')),
     CHECK (operation in ('Credit in cash', 'Collection from another bank', 'Credit card withdrawal', 'Remittance to another bank', 'Withdrawal in cash')),
     CHECK (transAmount >= 0)
-) STRICT;
+);
 -- Line up sooo nice. awesome
 CREATE TABLE Client (
     clientID INTEGER PRIMARY KEY,
@@ -53,7 +56,7 @@ CREATE TABLE Client (
     birthDate TEXT NOT NULL,  -- birth_number
     gender INTEGER NOT NULL,  -- birth_number
     FOREIGN KEY (cityID) REFERENCES City(cityID)
-) STRICT;
+);
 CREATE TABLE Disposition (
     dispID INTEGER PRIMARY KEY,
     accountID INTEGER NOT NULL,
@@ -62,7 +65,7 @@ CREATE TABLE Disposition (
     FOREIGN KEY (accountID) REFERENCES Account(accountID),
     FOREIGN KEY (clientID) REFERENCES Client(clientID),
     CHECK (dispType in ('OWNER', 'DISPONENT'))
-) STRICT;
+);
 CREATE TABLE CreditCard (
     cardID INTEGER PRIMARY KEY,
     dispID INTEGER NOT NULL,
@@ -70,7 +73,7 @@ CREATE TABLE CreditCard (
     cardIssued TEXT NOT NULL,
     FOREIGN KEY (dispID) REFERENCES Disposition(dispID),
     CHECK (cardType IN ('gold', 'classic', 'junior'))
-) STRICT;
+);
 CREATE TABLE City (
     cityID INTEGER PRIMARY KEY,  -- a1
     cityName TEXT,
@@ -88,4 +91,4 @@ CREATE TABLE City (
     entrepeneurs INTEGER,
     crimes1995 INTEGER,
     crimes1996 INTEGER  -- a16
-) STRICT;
+);
