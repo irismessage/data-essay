@@ -11,7 +11,7 @@ CREATE TABLE Loan (
     loanID INTEGER PRIMARY KEY,
     dispID INTEGER NOT NULL,
     loanDate TEXT NOT NULL,
-    loanAmount REAL NOT NULL,
+    loanAmount INTEGER NOT NULL,
     loanDuration INTEGER NOT NULL,
     loanPayments INTEGER NOT NULL,
     loanStatus TEXT NOT NULL,
@@ -70,19 +70,19 @@ CREATE TABLE CreditCard (
 );
 CREATE TABLE City (
     cityID INTEGER PRIMARY KEY,  -- a1
-    cityName TEXT,
-    region TEXT,
-    inhabitants INTEGER,
-    muns0 INTEGER,
-    muns500 INTEGER,
-    muns2000 INTEGER,
-    muns10000 INTEGER,
-    noAreas INTEGER,
-    ratioUrban REAL,
-    avgSalary REAL,
-    unemployment1995 REAL,
-    unemployment1996 REAL,
-    entrepeneurs INTEGER,
-    crimes1995 INTEGER,
+    cityName TEXT,  -- a2
+    region TEXT,  -- a3
+    inhabitants INTEGER,  -- a4
+    muns0 INTEGER,  -- a5
+    muns500 INTEGER,  -- a6
+    muns2000 INTEGER,  -- a7
+    muns10000 INTEGER,  -- a8
+    noAreas INTEGER,  -- a9
+    ratioUrban REAL,  -- a10
+    avgSalary INTEGER,  -- a11
+    unemployment1995 REAL,  -- a12
+    unemployment1996 REAL,  -- a13
+    entrepeneurs INTEGER,  -- a14
+    crimes1995 INTEGER,  -- a15
     crimes1996 INTEGER  -- a16
 );
