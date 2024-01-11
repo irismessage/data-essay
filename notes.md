@@ -6,9 +6,18 @@ business problem: understanding customers
 
 think about whether the  customer base is aging
 
+- logistic regression of loan default
+    - done
+    - do writeup
 - identify good customer and give them a free holiday or vodaphone or whatever banks do
+    - ?
+    - find average time staying with bank for population
+    - find average time for diff. credit cards users
+    - apply z-equation
 - make bar chart from standard vernacular generations of millennial, boomer, gen x balance, transaction count, loans etc.
-- consider proportion of customers recruited from each region
+    - assign each client row generation column
+    - groupby aggregate functions on them
+- consider proportion of customers recruited from each region in a similar way to generations
 - linear regreggion of num. entrepreneurs to num. loans, unemployement?
 
 think about more data analysis not just useful modelling
@@ -49,3 +58,6 @@ https://core.ac.uk/download/pdf/79110695.pdf
 
 /home/joelm/Documents/uni/data/
 https://jakevdp.github.io/PythonDataScienceHandbook/
+
+don't know if I'll get great closure on this until the deadline passes and I can't add anymore :/ cause it's so bs vague
+meh I'm kinda close to 40 already
