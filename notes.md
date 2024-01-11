@@ -38,3 +38,10 @@ stock dataset found:
 
 # find the average of birthdate or whatever
 # I don't know WHAT YOU WANT FROM ME
+
+
+https://en.wikipedia.org/wiki/Credit_score
+https://core.ac.uk/download/pdf/79110695.pdf
+
+/home/joelm/Documents/uni/data/
+https://jakevdp.github.io/PythonDataScienceHandbook/
