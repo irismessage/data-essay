@@ -39,6 +39,10 @@ stock dataset found:
 # find the average of birthdate or whatever
 # I don't know WHAT YOU WANT FROM ME
 
+# well, keep slogging at it and something will come to me even if I can't see it now
+
+# idea: group transacitons by credit card type. for customer retention stuff
+
 
 https://en.wikipedia.org/wiki/Credit_score
 https://core.ac.uk/download/pdf/79110695.pdf
