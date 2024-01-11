@@ -1,4 +1,5 @@
 .gitattributes export-ignore
 .gitignore export-ignore
+notes.md export-ignore
 submit.sh export-ignore
 zip.sh export-ignore
