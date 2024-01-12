@@ -61,3 +61,13 @@ https://jakevdp.github.io/PythonDataScienceHandbook/
 
 don't know if I'll get great closure on this until the deadline passes and I can't add anymore :/ cause it's so bs vague
 meh I'm kinda close to 40 already
+
+try adding what banks a customer makes transfers to to models
+won't add any value at this point
+
+hey this is easy
+have all the ideas I need to just have to implement
+then finally waffle
+
+EVIL DIES TONIGHT
+I *will feel closure after I write the last word of mu conclusion!!
