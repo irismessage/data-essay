@@ -71,3 +71,17 @@ then finally waffle
 
 EVIL DIES TONIGHT
 I *will feel closure after I write the last word of mu conclusion!!
+
+techniques
+1. inferential - standard distribution and hypothesis testing
+2. supervised - linear regression (simple, multiple, polynomial)
+    - https://jakevdp.github.io/PythonDataScienceHandbook/05.06-linear-regression.html
+3. supervised - decision tree (classification)
+4. unsupervised - clustering (classification)
+
+suggestions from paper
+- customer risk assessment
+- customer retention scheme
+
+idea 1. logistic regression on loan A/B with city characteristics
+try clustering and see if anythign intersting happens?
