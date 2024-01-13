@@ -1,6 +1,5 @@
 name: data
 channels:
-  - conda-forge
   - defaults
 dependencies:
   - debugpy
