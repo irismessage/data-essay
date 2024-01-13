@@ -1,8 +1,12 @@
+# libreoffice
 .~lock.*#
 *.bundle
 *.csv
 *.db
+# sqlite browser
 *.db-journal
+# converted notebook
+*.html
 *.pdf
 *.zip
 
