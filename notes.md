@@ -89,3 +89,7 @@ try clustering and see if anythign intersting happens?
 ERM edit link: https://app.diagrams.net/?libs=general;er&src=about#G1ZjJEg4H6lWp8Nc1sfdrZmiRZuk1heS37
 
 didn't use bank_to stuff for anything. or standing orders much?
+
+I could have included whether past loans had been paid back in logistic regression but I wanted the model to converge
+
+whoops! looks like it maaybe only predicts 0 and that's just decently accurate. maybe I won't care
