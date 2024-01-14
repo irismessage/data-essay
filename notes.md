@@ -87,3 +87,5 @@ idea 1. logistic regression on loan A/B with city characteristics
 try clustering and see if anythign intersting happens?
 
 ERM edit link: https://app.diagrams.net/?libs=general;er&src=about#G1ZjJEg4H6lWp8Nc1sfdrZmiRZuk1heS37
+
+didn't use bank_to stuff for anything. or standing orders much?
