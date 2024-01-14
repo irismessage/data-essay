@@ -94,4 +94,5 @@ I could have included whether past loans had been paid back in logistic regressi
 
 whoops! looks like it maaybe only predicts 0 and that's just decently accurate. maybe I won't care
 
-todo could move notes i.e. [^1] to after full stops
+could move notes i.e. [^1] to after full stops
+done
