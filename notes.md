@@ -96,3 +96,5 @@ whoops! looks like it maaybe only predicts 0 and that's just decently accurate. 
 
 could move notes i.e. [^1] to after full stops
 done
+
+predict: 74
